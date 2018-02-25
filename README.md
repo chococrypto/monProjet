@@ -1,2 +1,2 @@
 # monProjet
-« monProjet » est un projet dédié à l’apprentissage d’un logiciel de gestion de version en appliquant sur un projet coder en JAVA. 
+« monProjet » est un projet dédié à l’apprentissage de GIT en appliquant sur un projet codé en JAVA. 
