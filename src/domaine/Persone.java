@@ -3,6 +3,6 @@ package domaine;
 /**
  * Created by diegoruiz on 04.03.18.
  */
-public class Persone {
+abstract public class Persone {
 
 }
