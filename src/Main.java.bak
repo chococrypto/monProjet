@@ -4,6 +4,6 @@
 public class Main {
 
     public static void main(String[] args) {
-      Personne pers =   new domaine.personne(1,"Janno");
+      Personne pers =   new domaine.personne();
     }
 }
