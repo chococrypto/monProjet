@@ -4,6 +4,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello world");
+      Personne pers =   new domaine.personne(1,"Janno");
+	  Soprt sport =   new domaine.sport(1,"Judo");
     }
 }
