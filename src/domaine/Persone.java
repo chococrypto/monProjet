@@ -1,7 +1,6 @@
 package domaine;
 
-import java.util.Calendar;
-import java.util.Comparator;
+import java.util.Date;
 
 /**
  * Created by diegoruiz on 04.03.18.
@@ -10,10 +9,10 @@ abstract public class Persone implements Comparable{
 
     private int num; //required
     private String email,phone,firstName,lastName; //required
-    private Calendar dateNaissance;//required
+    private Date dateNaissance;//require
 
     //# normal Builder
-    public Persone(int num, String email, String phone, String firstName, String lastName, Calendar dateNaissance) {
+    public Persone(int num, String email, String phone, String firstName, String lastName, Date dateNaissance) {
         this.num = num;
         this.email = email;
         this.phone = phone;
@@ -29,13 +28,13 @@ abstract public class Persone implements Comparable{
     public String getPhone() {return phone;}
     public String getFirstName() {return firstName;}
     public String getLastName() {return lastName;}
-    public Calendar getDateNaissance() {return dateNaissance;}
+    public Date getDateNaissance() {return dateNaissance;}
     //setter
     public void setEmail(String email) {this.email = email;}
     public void setPhone(String phone) {this.phone = phone;}
     public void setFirstName(String firstName) {this.firstName = firstName;}
     public void setLastName(String lastName) {this.lastName = lastName;}
-    public void setDateNaissance(Calendar dateNaissance) {this.dateNaissance = dateNaissance;}
+    public void setDateNaissance(Date dateNaissance) {this.dateNaissance = dateNaissance;}
 
     //# Comparison
     //Equals
