@@ -9,16 +9,16 @@ abstract public class Persone implements Comparable{
 
     private int num; //required
     private String email,phone,firstName,lastName; //required
-    private Date dateNaissance;//require
+    private Date birthday;//require
 
     //# normal Builder
-    public Persone(int num, String email, String phone, String firstName, String lastName, Date dateNaissance) {
+    public Persone(int num, String email, String phone, String firstName, String lastName, Date birthday) {
         this.num = num;
         this.email = email;
         this.phone = phone;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dateNaissance = dateNaissance;
+        this.birthday = birthday;
     }
 
     //# Accessor
@@ -28,13 +28,13 @@ abstract public class Persone implements Comparable{
     public String getPhone() {return phone;}
     public String getFirstName() {return firstName;}
     public String getLastName() {return lastName;}
-    public Date getDateNaissance() {return dateNaissance;}
+    public Date getBirthday() {return birthday;}
     //setter
     public void setEmail(String email) {this.email = email;}
     public void setPhone(String phone) {this.phone = phone;}
     public void setFirstName(String firstName) {this.firstName = firstName;}
     public void setLastName(String lastName) {this.lastName = lastName;}
-    public void setDateNaissance(Date dateNaissance) {this.dateNaissance = dateNaissance;}
+    public void setBirthday(Date birthday) {this.birthday = birthday;}
 
     //# Comparison
     //Equals
@@ -65,6 +65,6 @@ abstract public class Persone implements Comparable{
                 "phone:" + phone +
                 ";firstName:" + firstName +
                 ";lastName:" + lastName +
-                ";dateNaissance:" + dateNaissance.toString();
+                ";birthday:" + birthday.toString();
     }
 }
