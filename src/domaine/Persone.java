@@ -42,7 +42,7 @@ abstract public class Persone implements Comparable{
     public boolean equals(Object obj) {
         if(obj instanceof Persone){
             Persone p = (Persone) obj;
-            if(num == p.num && email.equals(email) && phone.equals(phone)){
+            if(num == p.num && email.equals(p.email) && phone.equals(p.phone)){
                return true;
             }
         }
