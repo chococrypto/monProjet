@@ -3,6 +3,6 @@
 *.bak
 out
 target
+.idea
 *.iml
 settings.xml
-.idea/
