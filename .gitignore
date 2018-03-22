@@ -1,8 +1,8 @@
 .DS_Store
 *.class
 *.bak
-out
-target
-.idea
+/out
+/target
+/.idea
 *.iml
 settings.xml
