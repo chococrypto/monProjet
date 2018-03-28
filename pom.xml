@@ -101,7 +101,14 @@
         </plugins>
 
     </build>
-
+    <profiles>
+        <profile>
+            <id>toto</id>
+            <properties>
+                <application.version>1</application.version>
+            </properties>
+        </profile>
+    </profiles>
 
 
     <dependencies>
