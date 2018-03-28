@@ -6,7 +6,11 @@ import org.slf4j.LoggerFactory;
 import outils.Validation;
 
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
+import java.util.Properties;
 
 
 /**
@@ -19,7 +23,7 @@ public class Main {
         /*GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         System.out.println(gson.toJson(customer));*/
-        System.out.println(Validation.isDoubleValid("1"));
+        //System.out.println(Validation.isDoubleValid("1"));
        /*Logger logger = LoggerFactory.getLogger(Main.class);
        logger.info("Ecrire quelque chose d'utile");*/
 
@@ -28,5 +32,21 @@ public class Main {
         //configuer le builder --> pom.xml -> Manifest.MF
         //Creer un uberJar dans un Profil (Pom)
 
+
+        Properties properties = new Properties();
+
+        try {
+            properties.load(new FileInputStream("src/main/resources/application.properties"));
+            for (String key : properties.stringPropertyNames()) {
+                String value = properties.getProperty(key);
+                System.out.println("Key: " + key + "  Value: " + value);
+            }
+
+        } catch (IOException e) {
+            System.out.println("Exception Occurred " + e.getMessage());
+        }
+
+        //filtrage
+        //mvn [compile|package]-Dapplication.version=1
     }
 }
