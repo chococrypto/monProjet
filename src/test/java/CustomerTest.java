@@ -1,12 +1,11 @@
-import ch.monProjet.domaine.Customer;
+
+import domaine.Customer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Date;
 
-/**
- * Created by diegoruiz on 20.04.18.
- */
+
 public class CustomerTest {
 
     @Test
