@@ -14,6 +14,7 @@ public class Main {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         System.out.println(gson.toJson(customer));
+        System.out.println(customer);
 
     }
 }

@@ -9,5 +9,8 @@ public class Barber  extends Persone{
     public Barber(int num, String email, String phone, String firstName, String lastName, Date dateNaissance) {
         super(num, email, phone, firstName, lastName, dateNaissance);
     }
+    public Barber(int num){
+        super(num);
+    }
 
 }

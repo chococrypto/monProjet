@@ -20,7 +20,9 @@ abstract public class Persone implements Comparable{
         this.lastName = lastName;
         this.birthday = birthday;
     }
-
+    public Persone(int num){
+        this(num,"","","","",new Date());
+    }
     //# Accessor
     //getter
     public int getNum() {return num;}
@@ -65,6 +67,6 @@ abstract public class Persone implements Comparable{
                 "phone:" + phone +
                 ";firstName:" + firstName +
                 ";lastName:" + lastName +
-                ";birthday:" + birthday.toString();
+                ";birthday:" + birthday.getTime();
     }
 }
