@@ -15,6 +15,8 @@ public class Main {
         Gson gson = builder.create();
         System.out.println(gson.toJson(customer));
         System.out.println(customer);
+        System.out.println("============= 2 =============");
+        System.out.println(customer.toJson());
 
     }
 }

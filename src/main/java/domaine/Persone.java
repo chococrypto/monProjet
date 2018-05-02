@@ -1,5 +1,8 @@
 package domaine;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.Date;
 
 /**
@@ -60,6 +63,10 @@ abstract public class Persone implements Comparable{
         if(res != 0){ return res;}
         return email.compareTo(p.email);
     }
+    public String toJson(){
+        Gson gson = new GsonBuilder().create();
+        return gson.toJson(this);
+    }
     //# Description
     @Override
     public String toString() {
@@ -69,4 +76,5 @@ abstract public class Persone implements Comparable{
                 ";lastName:" + lastName +
                 ";birthday:" + birthday.getTime();
     }
+
 }

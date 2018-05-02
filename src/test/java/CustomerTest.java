@@ -26,6 +26,7 @@ public class CustomerTest {
         Customer a = new Customer(1,"qot@hotmail.com","09876534567","toto","anax", new Date());
         Customer b = new Customer(2,"zot@hotmail.com","09876534567","zoto","diego", new Date());
         Assert.assertTrue(a.compareTo(b) < 0);
+
     }
 
 }
