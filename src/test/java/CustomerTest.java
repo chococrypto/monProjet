@@ -1,24 +1,14 @@
 
-import com.google.gson.stream.JsonReader;
-import dao.PersoneDao;
 import domaine.Customer;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.util.Date;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+
 
 
 public class CustomerTest {
-
-    private PersoneDao personeDao;
-    @BeforeTest
-    protected void setUp(){
-        personeDao = mock(PersoneDao.class);
-    }
 
     @Test
     public void compareToEqualsTest(){
@@ -39,9 +29,7 @@ public class CustomerTest {
         Customer b = new Customer(2,"zot@hotmail.com","09876534567","zoto","diego", new Date());
         Assert.assertTrue(a.compareTo(b) < 0);
     }
-    @Test
-    public void getDataOfCustomerTest(){
-        //when(personeDao.jsonReader()).thenReturn()
-    }
+
+
 
 }

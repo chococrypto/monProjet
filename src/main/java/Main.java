@@ -18,6 +18,7 @@ public class Main {
         System.out.println(customer);
         System.out.println("============= 2 =============");
         System.out.println(customer.toJson());
+        new PersoneDao().datas();
 
     }
 }

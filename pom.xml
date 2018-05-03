@@ -209,9 +209,7 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/lib/outils.jar</systemPath>
-
         </dependency>
-
     </dependencies>
 
 
