@@ -1,9 +1,13 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dao.PersoneDao;
+import dao.Reader;
 import domaine.Customer;
+import domaine.Persone;
+
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 
 public class Main {
@@ -18,7 +22,10 @@ public class Main {
         System.out.println(customer);
         System.out.println("============= 2 =============");
         System.out.println(customer.toJson());
-        new PersoneDao().datas();
+        System.out.println("============= 3 =============");
+        PersoneDao dao = new PersoneDao(new Reader());
 
+       List<Persone> lst = dao.datas();
+        System.out.println(lst.size());
     }
 }

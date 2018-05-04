@@ -1,36 +1,38 @@
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import dao.PersoneDao;
+import dao.Reader;
 import domaine.Persone;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import java.util.ArrayList;
+import java.util.List;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by diegoruiz on 03.05.18.
- */
 public class PersonneDaoTest {
 
-
-    private JsonArray jsonArray;
+    private Reader reader;
+    private PersoneDao dao;
     @BeforeTest
-    protected void setUp(){
-        jsonArray = mock(JsonArray.class);
+    public void setUp(){
+        reader = mock(Reader.class);
+        dao = new PersoneDao(reader);
     }
+
     @Test
     public void getDataOfCustomerTest(){
-        when(jsonArray.getAsJsonArray()).thenReturn(new JsonParser().parse("[{}]").getAsJsonArray());
-        ArrayList<Persone> persones = new PersoneDao().datas();
-        Assert.assertTrue(persones.size() == 0);
+        when(reader.jsonArray()).thenReturn(new JsonParser().parse("[]").getAsJsonArray());
+        List<Persone> persones = dao.datas();
+        Assert.assertEquals(persones.size(), 0);
     }
 
     @Test
     public void getDataOfCustomerSingleTest(){
-        when(jsonArray.getAsJsonArray()).thenReturn(new JsonParser().parse("[{'num':1}]").getAsJsonArray());
-        ArrayList<Persone> persones = new PersoneDao().datas();
-        Assert.assertTrue(persones.size() == 1);
+        when(reader.jsonArray()).thenReturn(new JsonParser().parse("[{'num':1}]").getAsJsonArray());
+        List<Persone> persones = dao.datas();
+        Assert.assertEquals(persones.size(), 1);
     }
 }
