@@ -57,7 +57,9 @@ abstract public class Persone implements Comparable{
     @Override
     public int compareTo(Object o) {
         Persone p = (Persone) o;
-        int res = lastName.compareTo(p.lastName);
+        int res = num - p.num;
+        if(res != 0){return res;}
+        res = lastName.compareTo(p.lastName);
         if(res != 0){return res;}
         res = firstName.compareTo(p.firstName);
         if(res != 0){ return res;}
