@@ -1,4 +1,4 @@
-package domaine;
+package ch.heg.monProjet.domaine;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,4 +1,4 @@
-package dao;
+package ch.heg.monProjet.dao;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;

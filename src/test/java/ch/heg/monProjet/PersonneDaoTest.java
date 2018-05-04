@@ -1,9 +1,9 @@
+package ch.heg.monProjet;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
-import dao.PersoneDao;
-import dao.Reader;
-import domaine.Persone;
+import ch.heg.monProjet.dao.PersoneDao;
+import ch.heg.monProjet.dao.Reader;
+import ch.heg.monProjet.domaine.Persone;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

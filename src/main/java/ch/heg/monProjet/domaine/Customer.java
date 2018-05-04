@@ -1,4 +1,4 @@
-package domaine;
+package ch.heg.monProjet.domaine;
 
 import java.util.Date;
 

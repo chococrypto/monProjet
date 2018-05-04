@@ -1,13 +1,11 @@
-package dao;
+package ch.heg.monProjet.dao;
 
 import com.google.gson.*;
-import com.google.gson.stream.JsonReader;
-import domaine.Customer;
-import domaine.Persone;
+import ch.heg.monProjet.domaine.Customer;
+import ch.heg.monProjet.domaine.Persone;
 
 import java.util.ArrayList;
 
-import java.io.*;
 import java.util.List;
 
 /**
