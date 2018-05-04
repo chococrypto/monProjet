@@ -27,14 +27,14 @@ public class PersonneTest {
     @Test
     public void testCompareToPusGrandAB(){
         persone1 = new Customer(1,"qot@hotmail.com","09876534567","toto","anax", new Date());
-        persone2 = new Customer(2,"zot@hotmail.com","09876534567","zoto","diego", new Date());
+        persone2 = new Barber(2,"zot@hotmail.com","09876534567","zoto","diego", new Date());
         Assert.assertTrue(persone1.compareTo(persone2) < 0);
     }
 
     @Test
     public void testCompareToOneArg(){
         persone1 = new Customer(1);
-        persone2 = new Customer(2);
+        persone2 = new Barber(2);
         Assert.assertTrue(persone1.compareTo(persone2) < 0);
     }
     @Test
@@ -86,6 +86,7 @@ public class PersonneTest {
         persone2 = new Customer(2);
         Assert.assertNotEquals(persone1,persone2);
     }
+
 
 
 }

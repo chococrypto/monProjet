@@ -1,9 +1,10 @@
-package ch.heg.monProjet;
+package ch.heg.monProjet.dao;
 
 import com.google.gson.JsonParser;
 import ch.heg.monProjet.dao.PersoneDao;
 import ch.heg.monProjet.dao.Reader;
 import ch.heg.monProjet.domaine.Persone;
+import com.google.gson.stream.JsonReader;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -23,14 +24,14 @@ public class PersonneDaoTest {
     }
 
     @Test
-    public void getDataOfCustomerTest(){
+    public void testGetDataOfCustomer(){
         when(reader.jsonArray()).thenReturn(new JsonParser().parse("[]").getAsJsonArray());
         List<Persone> persones = dao.datas();
         Assert.assertEquals(persones.size(), 0);
     }
 
     @Test
-    public void getDataOfCustomerSingleTest(){
+    public void testGetDataOfCustomerSingle(){
         when(reader.jsonArray()).thenReturn(new JsonParser().parse("[{'num':1}]").getAsJsonArray());
         List<Persone> persones = dao.datas();
         Assert.assertEquals(persones.size(), 1);
