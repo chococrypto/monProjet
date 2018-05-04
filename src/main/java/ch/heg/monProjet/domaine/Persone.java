@@ -45,11 +45,9 @@ abstract public class Persone implements Comparable{
     //Equals
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Persone){
-            Persone p = (Persone) obj;
-            if(num == p.num && email.equals(p.email) && phone.equals(p.phone)){
-               return true;
-            }
+        Persone p = (Persone) obj;
+        if(num == p.num && email.equals(p.email) && phone.equals(p.phone)){
+            return true;
         }
         return false;
     }
@@ -57,13 +55,19 @@ abstract public class Persone implements Comparable{
     @Override
     public int compareTo(Object o) {
         Persone p = (Persone) o;
-        int res = num - p.num;
-        if(res != 0){return res;}
-        res = lastName.compareTo(p.lastName);
-        if(res != 0){return res;}
-        res = firstName.compareTo(p.firstName);
-        if(res != 0){ return res;}
-        return email.compareTo(p.email);
+        int res;
+        if(lastName.isEmpty() && firstName.isEmpty() && email.isEmpty()){
+          return num - p.num;
+        } else {
+            res = lastName.compareTo(p.lastName);
+            if(res != 0){return res;}
+            res = firstName.compareTo(p.firstName);
+            if(res != 0){ return res;}
+            return email.compareTo(p.email);
+        }
+
+
+
     }
     public String toJson(){
         Gson gson = new GsonBuilder().create();
