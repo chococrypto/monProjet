@@ -30,6 +30,12 @@ public class PersonneTest {
         persone2 = new Barber(2,"zot@hotmail.com","09876534567","zoto","diego", new Date());
         Assert.assertTrue(persone1.compareTo(persone2) < 0);
     }
+    @Test
+    public void testCompareToPusGrandABWithFirstName(){
+        persone1 = new Customer(1,"zot@hotmail.com","09876534567","toto","diego", new Date());
+        persone2 = new Barber(1,"zot@hotmail.com","09876534567","zoto","diego", new Date());
+        Assert.assertTrue(persone1.compareTo(persone2) < 0);
+    }
 
     @Test
     public void testCompareToOneArg(){
@@ -50,6 +56,7 @@ public class PersonneTest {
         persone2 = new Customer(2,"zot@hotmail.com","09876534567","zoto","diego", new Date());
         Assert.assertNotEquals(persone1,persone2);
     }
+
     @Test
     public void testNotEqualsMultArgWithSameID(){
         persone1  = new Customer(1,"qot@hotmail.com","09876534567","toto","tata", new Date());
@@ -85,6 +92,10 @@ public class PersonneTest {
         persone1  = new Customer(1);
         persone2 = new Customer(2);
         Assert.assertNotEquals(persone1,persone2);
+    }
+    @Test void testToJson(){
+        persone1  = new Customer(1);
+        Assert.assertEquals(persone1.toJson().getClass(),String.class);
     }
 
 
