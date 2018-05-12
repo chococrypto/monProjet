@@ -14,18 +14,24 @@ import java.io.InputStreamReader;
 public class Reader {
 
     private static String PATH_FILE = "src/main/resources/data.txt";
+
+    private final FilePath filePath;
+
+    public Reader(FilePath filePath) {
+        this.filePath = filePath;
+    }
+
     public JsonArray jsonArray(){
-        FilePath f = new FilePath();
         try{
             JsonParser jsonParser = new JsonParser();
-            JsonReader reader = new JsonReader(new InputStreamReader( new FileInputStream(f.path())));
+            JsonReader reader = new JsonReader(new InputStreamReader( new FileInputStream(filePath.path())));
             return  jsonParser.parse(reader).getAsJsonArray();
         }catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public class FilePath{
+    public class FilePath {
         public String path(){
             return PATH_FILE;
         }
