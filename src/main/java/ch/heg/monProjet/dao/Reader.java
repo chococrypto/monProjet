@@ -30,10 +30,4 @@ public class Reader {
             throw new RuntimeException(e);
         }
     }
-
-    public class FilePath {
-        public String path(){
-            return PATH_FILE;
-        }
-    }
 }

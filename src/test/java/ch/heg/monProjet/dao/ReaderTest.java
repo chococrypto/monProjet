@@ -15,12 +15,12 @@ import static org.mockito.Mockito.when;
  */
 public class ReaderTest {
 
-    private Reader.FilePath filePath;
+    private FilePath filePath;
     private Reader reader;
 
     @BeforeTest
     public void setUp(){
-        filePath = mock(Reader.FilePath.class);
+        filePath = mock(FilePath.class);
         reader = new Reader(filePath);
     }
 

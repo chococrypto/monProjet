@@ -3,12 +3,15 @@ package ch.heg.monProjet.domaine;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * Created by diegoruiz on 04.03.18.
  */
 abstract public class Persone implements Comparable{
+
+    public static SimpleDateFormat FORMAT_DATE = new SimpleDateFormat("YYYY-MM-dd");
 
     private int num; //required
     private String email,phone,firstName,lastName; //required
@@ -51,9 +54,6 @@ abstract public class Persone implements Comparable{
             if(res != 0){ return res;}
             return email.compareTo(p.email);
         }
-
-
-
     }
     public String toJson(){
         Gson gson = new GsonBuilder().create();
@@ -66,7 +66,7 @@ abstract public class Persone implements Comparable{
                 "phone:" + phone +
                 ";firstName:" + firstName +
                 ";lastName:" + lastName +
-                ";birthday:" + birthday.getTime();
+                ";birthday:" + FORMAT_DATE.format(birthday);
     }
 
 }

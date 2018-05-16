@@ -1,10 +1,9 @@
 package ch.heg.monProjet.dao;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import ch.heg.monProjet.dao.PersoneDao;
-import ch.heg.monProjet.dao.Reader;
 import ch.heg.monProjet.domaine.Persone;
-import com.google.gson.stream.JsonReader;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -24,7 +23,7 @@ public class PersonneDaoTest {
     }
 
     @Test
-    public void testGetDataOfCustomer(){
+    public void testGetDataOfCustomer() {
         when(reader.jsonArray()).thenReturn(new JsonParser().parse("[]").getAsJsonArray());
         List<Persone> persones = dao.datas();
         Assert.assertEquals(persones.size(), 0);
@@ -33,7 +32,17 @@ public class PersonneDaoTest {
     @Test
     public void testGetDataOfCustomerSingle(){
         when(reader.jsonArray()).thenReturn(new JsonParser().parse("[{'num':1}]").getAsJsonArray());
+        Assert.assertThrows(NullPointerException.class,()-> dao.datas());
+    }
+    @Test
+    public void testGetDataOfCustomerComplet(){
+        when(reader.jsonArray()).thenReturn(new JsonParser().parse("[{'num':1,'email':'Aliquam.erat.volutpat@idmagnaet.co.uk','phone':'406-9659','firstName':'Quentin','lastName':'Santos','birthday':'2018-07-16 22:05:28'}]").getAsJsonArray());
         List<Persone> persones = dao.datas();
         Assert.assertEquals(persones.size(), 1);
     }
+    @Test void testGetDataWithOtherJsonObject(){
+        when(reader.jsonArray()).thenReturn(new JsonParser().parse("[{'num':1,'email':'Aliquam.erat.volutpat@idmagnaet.co.uk','phone':'406-9659','firstName':'Quentin','lastName':'Santos','birthday':''}]").getAsJsonArray());
+        Assert.assertThrows(RuntimeException.class,()-> dao.datas());
+    }
+    
 }

@@ -183,6 +183,9 @@
                 <version>1.4.0</version>
                 <configuration>
                     <testPlugin>testng</testPlugin>
+                    <excludedClasses>
+                        ch.heg.monProjet.Main
+                    </excludedClasses>
                 </configuration>
             </plugin>
         </plugins>
@@ -227,13 +230,6 @@
             <version>1.7.25</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <!--<dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>-->
         <dependency>
             <groupId>com.outils</groupId>
             <artifactId>outils</artifactId>
