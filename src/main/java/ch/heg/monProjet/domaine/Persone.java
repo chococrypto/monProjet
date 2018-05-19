@@ -30,6 +30,25 @@ abstract public class Persone implements Comparable{
         this(num,"","","","",new Date());
     }
 
+    //# getter & setter
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     //# Comparison
     //Equals
     @Override

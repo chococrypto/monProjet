@@ -237,6 +237,11 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/lib/outils.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>forms</artifactId>
+            <version>1.2.1</version>
+        </dependency>
     </dependencies>
     <!-- =============================================================== -->
     <!-- Profils -->
