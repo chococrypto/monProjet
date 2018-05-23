@@ -161,6 +161,7 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.1</version>
+
                <executions>
                    <execution>
                        <goals>
@@ -174,7 +175,15 @@
                            <goal>report</goal>
                        </goals>
                    </execution>
+
                </executions>
+               <configuration>
+                   <excludes>
+                       <exclude>**/Main.class</exclude>
+                       <!--<exclude>**/vue/*</exclude>-->
+                       <exclude>**/*_$*</exclude>
+                   </excludes>
+               </configuration>
             </plugin>
 
             <plugin>
@@ -186,10 +195,53 @@
                     <excludedClasses>
                         ch.heg.monProjet.Main
                     </excludedClasses>
+                    <excludedClasses>
+                        ch.heg.monProjet.vue
+                    </excludedClasses>
                 </configuration>
             </plugin>
-        </plugins>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/IT*.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>ideauidesigner-maven-plugin</artifactId>
+                    <version>1.0-beta-1</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>javac2</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+
+                    <configuration>
+                        <fork>true</fork>
+                        <debug>true</debug>
+                        <failOnError>true</failOnError>
+                    </configuration>
+                </plugin>
+
+        </plugins>
     </build>
 
 
@@ -242,6 +294,18 @@
             <artifactId>forms</artifactId>
             <version>1.2.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>forms_rt</artifactId>
+            <version>7.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-swing-testng</artifactId>
+            <version>3.8.0</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
     <!-- =============================================================== -->
     <!-- Profils -->

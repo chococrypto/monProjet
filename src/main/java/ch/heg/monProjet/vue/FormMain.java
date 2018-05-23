@@ -16,6 +16,7 @@ public class FormMain extends JFrame {
     private JButton btnVider;
     private JButton btnRemplir;
     private JList lstDonnee;
+    private JScrollPane scrolleListe;
     private ArrayList<Persone> list;
     private DefaultListModel<String> dlm;
     public FormMain(){
@@ -64,7 +65,13 @@ public class FormMain extends JFrame {
     private void viderActionPerfomed(ActionEvent e){
         dlm.clear();
     }
-
-
-
+    public JButton getBtnVider(){
+        return btnVider;
+    }
+    public int sizeOfList() {
+        return dlm.size();
+    }
+    public int sizeOfListArray(){
+        return list.size();
+    }
 }

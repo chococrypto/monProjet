@@ -13,7 +13,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <scrollpane id="96457">
+      <scrollpane id="96457" binding="scrolleListe">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
@@ -33,6 +33,7 @@
           <forms/>
         </constraints>
         <properties>
+          <name value="btnVide"/>
           <text value="Vider"/>
         </properties>
       </component>
