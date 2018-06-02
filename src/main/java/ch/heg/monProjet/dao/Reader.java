@@ -13,10 +13,8 @@ import java.io.InputStreamReader;
  */
 public class Reader {
 
-    private static String PATH_FILE = "src/main/resources/data.txt";
 
     private final FilePath filePath;
-
     public Reader(FilePath filePath) {
         this.filePath = filePath;
     }

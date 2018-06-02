@@ -11,7 +11,7 @@ import java.util.Date;
  */
 abstract public class Persone implements Comparable{
 
-    public static SimpleDateFormat FORMAT_DATE = new SimpleDateFormat("YYYY-MM-dd");
+    static SimpleDateFormat FORMAT_DATE = new SimpleDateFormat("yyyy-MM-dd");
 
     private int num; //required
     private String email,phone,firstName,lastName; //required
@@ -53,9 +53,11 @@ abstract public class Persone implements Comparable{
     //Equals
     @Override
     public boolean equals(Object obj) {
-        Persone p = (Persone) obj;
-        if(num == p.num && email.equals(p.email) && phone.equals(p.phone)){
-            return true;
+        if(obj instanceof Persone){
+            Persone p = (Persone) obj;
+            if(num == p.num && email.equals(p.email) && phone.equals(p.phone)){
+                return true;
+            }
         }
         return false;
     }
